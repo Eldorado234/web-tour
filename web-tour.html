@@ -168,6 +168,7 @@ of the tour.
       for (var i = 0; i < this.children.length; i++) {
         this.children[i].addEventListener('next', this.next.bind(this));
         this.children[i].addEventListener('abort', this.abort.bind(this));
+        this.children[i].addEventListener('info-request', this.abort.bind(this));
         this.children[i].addEventListener('core-overlay-position', this._layoutDialog.bind(this));
         this.children[i].texts = this.texts;
       }
