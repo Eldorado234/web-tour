@@ -63,13 +63,13 @@
       </div>
 
       <web-tour id="tour" texts="{{tourTexts}}">
-        <web-tour-step heading="Red spot" target="{{step1Target}}" moreInfosAvailable>
+        <web-tour-step heading="Red spot" target="{{step1Target}}">
           <p>The component atomatically hilights the target element and positions the dialog.</p>
         </web-tour-step>
         <web-tour-step heading="Green spot" targetSelector="#example2" backdrop="false">
           <p>The backdrop could be easily disabled. By using the targetSelector attribute, the target element could be directly defined.</p>
         </web-tour-step>
-        <web-tour-step heading="Blue spot" target="{{step3Target}}">
+        <web-tour-step heading="Blue spot" target="{{step3Target}}" moreInfosAvailable on-info-request="{{showMoreInfos}}">
           <p>Now the dialog moved to the left side of the target, because there is more room available.</p>
         </web-tour-step>
         <web-tour-step heading="Final step">
@@ -91,7 +91,11 @@
 
         var tour = document.querySelector('#tour');
         tour.start();
-      }
+      };
+
+      template.showMoreInfos = function() {
+        window.open('http://webcomponents.org/', '_blank');
+      };
 
     </script>
   </body>
