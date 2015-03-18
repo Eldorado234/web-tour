@@ -37,9 +37,11 @@ content presented in the dialog that is shown when the step is activated.
         <paper-button affirmative on-click="{{_abort}}">{{texts.abort}}</paper-button>
       </template>
 
-      <paper-button affirmative on-click="{{_next}}">
-        {{lastStep ? texts.finish : texts.next}}
-      </paper-button>
+      <template if="{{autoNext}}">
+        <paper-button affirmative on-click="{{_next}}">
+          {{lastStep ? texts.finish : texts.next}}
+        </paper-button>
+      </template>
     </paper-action-dialog>
 
   </template>
@@ -111,6 +113,16 @@ content presented in the dialog that is shown when the step is activated.
        * @default false
        */
       moreInfosAvailable: false,
+
+      /**
+       * If the user be able to skip
+       * this step manually.
+       *
+       * @attribute autoNext
+       * @type boolean
+       * @default true
+       */
+      autoNext: true,
 
       /**
        * If this step is the last step. Alters
