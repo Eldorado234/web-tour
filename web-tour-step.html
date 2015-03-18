@@ -33,7 +33,10 @@ content presented in the dialog that is shown when the step is activated.
         <paper-button dismissive on-click="{{_showMoreInfos}}">{{texts.moreInfos}}</paper-button>
       </template>
 
-      <paper-button affirmative on-click="{{_abort}}">{{texts.abort}}</paper-button>
+      <template if="{{!lastStep}}">
+        <paper-button affirmative on-click="{{_abort}}">{{texts.abort}}</paper-button>
+      </template>
+
       <paper-button affirmative on-click="{{_next}}">
         {{lastStep ? texts.finish : texts.next}}
       </paper-button>
