@@ -125,6 +125,19 @@ content presented in the dialog that is shown when the step is activated.
       autoNext: true,
 
       /**
+       * Defines an offset around the target element that
+       * should not be covered by the backdrop.
+       *
+       * Default:
+       *     {top: 0, right: 0, bottom: 0, left: 0}
+       *
+       * @attribute backdropOffset
+       * @type Object
+       * @default {...}
+       */
+      backdropOffset: {top: 0, right: 0, bottom: 0, left: 0},
+
+      /**
        * If this step is the last step. Alters
        * the presentation of the dialog.
        *

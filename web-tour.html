@@ -37,7 +37,8 @@ of the tour.
   <template>
     <content></content>
 
-    <dynamic-backdrop target="{{currentTarget}}" visible="{{backdropVisible}}">
+    <dynamic-backdrop target="{{currentTarget}}" offset="{{backdropOffset}}" 
+                      visible="{{backdropVisible}}" host="{{host}}">
     </dynamic-backdrop>
   </template>
 
@@ -75,7 +76,18 @@ of the tour.
         abort: 'Abort',
         finish: 'Finish',
         moreInfos: 'More Infos'
-      }
+      },
+
+      /**
+       * The element the tour should be presented in.
+       * The backdrops are restricted to the area of
+       * this element.
+       *
+       * @attribute host
+       * @type Element
+       * @default document.body
+       */
+      host: document.body,
     },
     lastTimeStamp: 0,
     ready: function() {
@@ -124,6 +136,7 @@ of the tour.
 
         this.backdropVisible = nextStep.backdrop;
         this.currentTarget = nextStep.target;
+        this.backdropOffset = nextStep.backdropOffset;
       } else {
         this.abort();
       }
