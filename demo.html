@@ -62,7 +62,7 @@
         <div id="example3"></div>
       </div>
 
-      <web-tour id="tour">
+      <web-tour id="tour" texts="{{tourTexts}}">
         <web-tour-step heading="Red spot" target="{{step1Target}}" moreInfosAvailable>
           <p>The component atomatically hilights the target element and positions the dialog.</p>
         </web-tour-step>
@@ -85,6 +85,7 @@
       var template = document.querySelector('#template');
 
       template.startTour = function() {
+        template.tourTexts.next = 'Go on';
         template.step1Target = document.querySelector('#example1');
         template.step3Target = document.querySelector('#example3');
 
