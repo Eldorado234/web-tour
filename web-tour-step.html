@@ -58,11 +58,31 @@ content presented in the dialog that is shown when the step is activated.
        * when this step is active. Could be
        * omitted.
        *
+       * Use either `target` or `targetSelector`.
+       * `target` is overriden, when both values
+       * are provided.
+       *
        * @attribute target
        * @type Element
        * @default null
        */
       target: null,
+
+      /**
+       * The element that should be hilighted
+       * when this step is active, defined by an
+       * selector. 
+       *
+       * Use either `target` or `targetSelector`.
+       * The `target` attribute will be
+       * set accordingly, when a `targetSelector` is
+       * provided.
+       *
+       * @attribute targetSelector
+       * @type string
+       * @default null
+       */
+      targetSelector: null,
 
       /**
        * If a backdrop should be shown behind
@@ -124,6 +144,9 @@ content presented in the dialog that is shown when the step is activated.
     },
     _next: function(event) {
       this.fire('next');
+    },
+    targetSelectorChanged: function() {
+      this.target = document.querySelector(this.targetSelector);
     }
   });
   </script>

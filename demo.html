@@ -66,8 +66,8 @@
         <web-tour-step heading="Red spot" target="{{step1Target}}" moreInfosAvailable>
           <p>The component atomatically hilights the target element and positions the dialog.</p>
         </web-tour-step>
-        <web-tour-step heading="Green spot" target="{{step2Target}}" backdrop="false">
-          <p>The backdrop could be easily disabled.</p>
+        <web-tour-step heading="Green spot" targetSelector="#example2" backdrop="false">
+          <p>The backdrop could be easily disabled. By using the targetSelector attribute, the target element could be directly defined.</p>
         </web-tour-step>
         <web-tour-step heading="Blue spot" target="{{step3Target}}">
           <p>Now the dialog moved to the left side of the target, because there is more room available.</p>
@@ -86,7 +86,6 @@
 
       template.startTour = function() {
         template.step1Target = document.querySelector('#example1');
-        template.step2Target = document.querySelector('#example2');
         template.step3Target = document.querySelector('#example3');
 
         var tour = document.querySelector('#tour');
