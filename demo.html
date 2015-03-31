@@ -92,23 +92,24 @@
     
     </template>
     <script type="text/javascript">
-      var template = document.querySelector('#template');
+      (function(window, document, undefined) {
+        var template = document.querySelector('#template');
 
-      template.startTour = function() {
-        template.tourTexts.next = 'Go on';
-        template.tourHost = document.querySelector('.container');
-        template.step1Target = document.querySelector('#example1');
-        template.step1Offset = {left: 10, right: 10, top: 10, bottom: 10};
-        template.step3Target = document.querySelector('#example3');
+        template.startTour = function() {
+          template.tourTexts.next = 'Go on';
+          template.tourHost = document.querySelector('.container');
+          template.step1Target = document.querySelector('#example1');
+          template.step1Offset = {left: 10, right: 10, top: 10, bottom: 10};
+          template.step3Target = document.querySelector('#example3');
 
-        var tour = document.querySelector('#tour');
-        tour.start();
-      };
+          var tour = document.querySelector('#tour');
+          tour.start();
+        };
 
-      template.showMoreInfos = function() {
-        window.open('http://webcomponents.org/', '_blank');
-      };
-
+        template.showMoreInfos = function() {
+          window.open('http://webcomponents.org/', '_blank');
+        };
+      })(window, document);
     </script>
   </body>
 </html>
