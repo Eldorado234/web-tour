@@ -130,7 +130,7 @@ of the tour.
         this.lastNext = event.timeStamp;
       }
 
-      if (!event && this.currentStep >= 0 && this.currentStep < this.children.length) {
+      if (this.currentStep >= 0 && this.currentStep < this.children.length) {
         this.children[this.currentStep].close();
       }
 
@@ -142,7 +142,7 @@ of the tour.
 
         nextStep.open();
 
-        this.backdropVisible = nextStep.backdrop;
+        this.backdropVisible = !nextStep.empty && nextStep.backdrop;
         this.currentTarget = nextStep.target;
         this.backdropOffset = nextStep.backdropOffset;
         if (this.currentStep != 0) {
