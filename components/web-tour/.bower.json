@@ -1,0 +1,28 @@
+{
+  "name": "web-tour",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "web-tour.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "paper-elements": "Polymer/paper-elements#~0.5.2",
+    "dynamic-backdrop": "~1.2.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0"
+  },
+  "homepage": "https://github.com/Eldorado234/web-tour",
+  "_release": "9f03703cad",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9f03703cadba282237f4d453c08fddf6e966882c"
+  },
+  "_source": "git://github.com/Eldorado234/web-tour.git",
+  "_target": "master",
+  "_originalSource": "Eldorado234/web-tour",
+  "_direct": true
+}
