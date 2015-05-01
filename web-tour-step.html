@@ -168,10 +168,10 @@ content presented in the dialog that is shown when the step is activated.
       this.fire('info-request');
     },
     _abort: function() {
-      this.fire('abort');
+      this.fire('step-abort');
     },
     _next: function(event) {
-      this.fire('next');
+      this.fire('step-next');
     },
     targetSelectorChanged: function() {
       this.target = document.querySelector(this.targetSelector);
