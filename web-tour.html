@@ -130,7 +130,7 @@ of the tour.
         this.lastNext = event.timeStamp;
       }
 
-      if (this.currentStep >= 0 && this.currentStep < this.children.length) {
+      if (!event && this.currentStep >= 0 && this.currentStep < this.children.length) {
         this.children[this.currentStep].close();
       }
 
