@@ -161,7 +161,8 @@ content presented in the dialog that is shown when the step is activated.
       backdropOffset: null,
 
       /**
-       * Defines the margin of the dialog.
+       * Defines an offset in pixel the dialog is moved
+       * from the calculated position.
        *
        * The left value is only used, when the dialog is positioned
        * on the right side of the target, the right value accordingly.
@@ -169,11 +170,11 @@ content presented in the dialog that is shown when the step is activated.
        * Default:
        *     {top: 0, right: 0, left: 0}
        *
-       * @attribute dialogMargin
+       * @attribute dialogOffset
        * @type Object
        * @default {...}
        */
-      dialogMargin: null,
+      dialogOffset: null,
 
       /**
        * If this step is the last step. Alters
@@ -190,7 +191,7 @@ content presented in the dialog that is shown when the step is activated.
     },
     ready: function() {
       this.backdropOffset = {top: 0, right: 0, bottom: 0, left: 0};
-      this.dialogMargin = {top: 0, right: 0, left: 0};
+      this.dialogOffset = {top: 0, right: 0, left: 0};
     },
     open: function() {
       if (!this.empty) {

@@ -213,7 +213,7 @@ of the tour.
         var dialog = event.detail.target;
         var dialogMargin = parseFloat(window.getComputedStyle(dialog).marginTop);
         var targetRect = event.target.target.getBoundingClientRect();
-        var offset = this.children[this.currentStep].dialogMargin;
+        var offset = this.children[this.currentStep].dialogOffset;
 
         var left = targetRect.left > window.innerWidth - targetRect.right;
 
