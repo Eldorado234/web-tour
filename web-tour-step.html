@@ -158,7 +158,7 @@ content presented in the dialog that is shown when the step is activated.
        * @type Object
        * @default {...}
        */
-      backdropOffset: {top: 0, right: 0, bottom: 0, left: 0},
+      backdropOffset: null,
 
       /**
        * If this step is the last step. Alters
@@ -172,6 +172,9 @@ content presented in the dialog that is shown when the step is activated.
        * @default false
        */
       lastStep: false
+    },
+    ready: function() {
+      this.backdropOffset = {top: 0, right: 0, bottom: 0, left: 0};
     },
     open: function() {
       if (!this.empty) {
